@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 module.exports = {
   // 개발환경
@@ -9,11 +9,6 @@ module.exports = {
 
   // 애플리케이션 시작 경로
   entry: '/src/index.js',
-
-  // 번들된 파일 경로
-  output: {
-    filename: 'bundle.[hash].js',
-  },
 
   module: {
     rules: [
@@ -56,7 +51,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.css'],
     alias: {
       components: path.resolve(__dirname, 'src/components'),
     },
